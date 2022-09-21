@@ -39,10 +39,10 @@ namespace DevIO.UI.Site
                 app.UseExceptionHandler("/Error");
             }
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            });
+            //IApplicationBuilder applicationBuilder = app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            //});
 
             app.UseStaticFiles();
 
