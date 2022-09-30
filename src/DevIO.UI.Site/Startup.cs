@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -17,11 +16,11 @@ namespace DevIO.UI.Site
         //public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        //public void ConfigureServices(IServiceCollection services)
-        //{
-        //    services.AddRazorPages();
-        //    services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
-        //}
+        public void ConfigureServices(IServiceCollection services)
+        {
+            //services.AddRazorPages();
+            services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -34,6 +33,15 @@ namespace DevIO.UI.Site
             //{
             //    app.UseExceptionHandler("/Error");
             //}
+
+            app.UseRouting();
+
+            app.UseCors("default");
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+            });
 
             //IApplicationBuilder applicationBuilder = app.UseMvc(routes =>
             //{
@@ -51,10 +59,15 @@ namespace DevIO.UI.Site
             //    endpoints.MapRazorPages();
             //});
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Soul Phoda!");
-            });
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Soul Phoda!");
+            //});
+
+            //    app.UseMvc(routes =>
+            //    {
+            //        routes.MapRoute("default", "{controller=Home}/{action=Index}/{id}");
+            //    });
         }
-    }
+        }
 }
