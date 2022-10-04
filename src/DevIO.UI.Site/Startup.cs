@@ -48,7 +48,7 @@ namespace DevIO.UI.Site
             //    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             //});
 
-            //app.UseStaticFiles();
+            app.UseStaticFiles();
 
             //app.UseRouting();
 
