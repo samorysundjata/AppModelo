@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site_bundle.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/css/bootstrap.css"
+    ]
+  }
+]
