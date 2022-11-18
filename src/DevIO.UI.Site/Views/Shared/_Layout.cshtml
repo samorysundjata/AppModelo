@@ -36,12 +36,18 @@
 		</nav>
 	</header>
 
-
-        @RenderBody()
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+    
         
-        <footer>
-            Rodapé
-        </footer>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+			Minha App Modelo - <email>contato</email>
+		</div>		
+    </footer>
 
 	<environment include="Development">
 		<script src="~/js/site_bundle.min.js"></script>
